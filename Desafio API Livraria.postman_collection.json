@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "dcf4cc6d-f89d-4ff5-9022-82badc80a2c3",
+		"name": "Desafio API Livraria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41099331"
+	},
+	"item": [
+		{
+			"name": "Criar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Pantoja\",\r\n  \"password\": \"@Automatizecomigo2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoqa.com/Account/v1/User",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Pantoja\",\r\n  \"password\": \"@Automatizecomigo2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoqa.com/Account/v1/GenerateToken",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"GenerateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar Autorizacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Pantoja\",\r\n  \"password\": \"@Automatizecomigo2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoqa.com/Account/v1/Authorized",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"Authorized"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservar Livros",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IlBhbnRvamEiLCJwYXNzd29yZCI6IkBBdXRvbWF0aXplY29taWdvMjAyNSIsImlhdCI6MTc0MTQ1MzMyNX0.iVllqUVnYg8kz0awoyL8Et9tOsVC-FBBktNXoAxPRQM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"73cc8093-344b-4a0d-b9af-7fc098c29e08\",\r\n  \"collectionOfIsbns\": [\r\n    { \"isbn\": \"9781449365035\" },\r\n    { \"isbn\": \"9781491904244\" }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoqa.com/BookStore/v1/Books",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Livros Disponíveis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demoqa.com/BookStore/v1/Books",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar os Detalhes do Uusário com os Livros Reservados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"userID\": \"73cc8093-344b-4a0d-b9af-7fc098c29e08\",\r\n  \"userName\": \"Rafael_Pantoja\",\r\n  \"books\": [\r\n    {\r\n      \"isbn\": \"9781449365035\",\r\n      \"title\": \"Learning JavaScript Design Patterns\",\r\n      \"subTitle\": \"A JavaScript and HTML5 Developer's Guide\",\r\n      \"author\": \"Addy Osmani\",\r\n      \"publisher\": \"O'Reilly Media\"\r\n    },\r\n    {\r\n      \"isbn\": \"9781491904244\",\r\n      \"title\": \"JavaScript: The Good Parts\",\r\n      \"subTitle\": \"The Good Parts\",\r\n      \"author\": \"Douglas Crockford\",\r\n      \"publisher\": \"O'Reilly Media\"\r\n    }\r\n  ]\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoqa.com/Account/v1/User/73cc8093-344b-4a0d-b9af-7fc098c29e08",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User",
+						"73cc8093-344b-4a0d-b9af-7fc098c29e08"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
